@@ -52,6 +52,12 @@
 
 	<key>NSLocationUsageDescription</key>
 	<string>Your message requesting location access.</string>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Request location access always, even when the app is in the background.</string>
+
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Request location access always, even when the app is in the background.</string>
 	<!-- End of Location services -->
 
 </dict>

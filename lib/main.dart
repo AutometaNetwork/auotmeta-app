@@ -87,6 +87,11 @@ class _LocationScreenState extends State<LocationScreen> {
                     'Longitude: ${_currentPosition.longitude}',
                     style: TextStyle(fontSize: 20),
                   ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Speed: ${_currentPosition.speed}',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ],
               ),
       ),

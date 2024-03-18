@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'dart:async';
 
 void main() {
   runApp(MyApp());
@@ -39,6 +40,10 @@ class _LocationScreenState extends State<LocationScreen> {
   void initState() {
     super.initState();
     _getLocation();
+    // Start a periodic timer to update location and speed every second
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      _getLocation();
+    });
   }
 
   Future<void> _getLocation() async {

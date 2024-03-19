@@ -12,7 +12,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-android:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +26,18 @@ jobs:
       - run: flutter pub get
       - run: flutter build apk
       - run: flutter build appbundle
+
+  
+  build-ios:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Flutter action
+        uses: subosito/flutter-action@v2.13.0
+        with:
+         channel: 'stable'
+
+      - run: flutter pub get
+      - run: flutter build ios --release --no-codesign

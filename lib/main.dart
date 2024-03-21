@@ -73,32 +73,35 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Location Info'),
-      ),
-      body: Center(
-        child: _currentPosition == null
-            ? CircularProgressIndicator()
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Latitude: ${_currentPosition.latitude}',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Longitude: ${_currentPosition.longitude}',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Speed: ${_currentPosition.speed}',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ],
-              ),
+    return MaterialApp(
+      title: 'Location Info', // Set your app title here
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Location Info'),
+        ),
+        body: Center(
+          child: _currentPosition == null
+              ? CircularProgressIndicator()
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Latitude: ${_currentPosition.latitude}',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Longitude: ${_currentPosition.longitude}',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Speed: ${_currentPosition.speed}',
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ],
+                ),
+        ),
       ),
     );
   }

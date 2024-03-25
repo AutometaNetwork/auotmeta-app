@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Location Info',
       home: LocationScreen(),
     );
@@ -34,7 +35,7 @@ class _LocationScreenState extends State<LocationScreen> {
     headingAccuracy: 0,
     speed: 0,
     speedAccuracy: 0,
-  );  
+  );
 
   @override
   void initState() {
@@ -73,35 +74,33 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Location Info', // Set your app title here
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Location Info'),
-        ),
-        body: Center(
-          child: _currentPosition == null
-              ? CircularProgressIndicator()
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Latitude: ${_currentPosition.latitude}',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Longitude: ${_currentPosition.longitude}',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Speed: ${_currentPosition.speed}',
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ],
-                ),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.deepPurple[200],
+      appBar: AppBar(
+        title: Text('Location Info'),
+      ),
+      body: Center(
+        child: _currentPosition == null
+            ? CircularProgressIndicator()
+            : Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Latitude: ${_currentPosition.latitude}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Longitude: ${_currentPosition.longitude}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'Speed: ${_currentPosition.speed}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ],
+              ),
       ),
     );
   }
